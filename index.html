@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open-Reflect - 自学习反思系统</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: #fff;
+            min-height: 100vh;
+        }
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        .logo {
+            font-size: 80px;
+            margin-bottom: 20px;
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, #00d4ff, #7c3aed);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .tagline {
+            font-size: 20px;
+            color: #a0aec0;
+            margin-bottom: 30px;
+        }
+        .description {
+            max-width: 700px;
+            font-size: 18px;
+            line-height: 1.8;
+            color: #e2e8f0;
+            margin-bottom: 40px;
+        }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 40px 0;
+        }
+        .feature-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255,255,255,0.15);
+        }
+        .feature-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+        .feature-title {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #00d4ff;
+        }
+        .feature-desc {
+            color: #a0aec0;
+            line-height: 1.6;
+        }
+        .buttons {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 40px;
+        }
+        .btn {
+            padding: 15px 40px;
+            font-size: 18px;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+        .btn-primary {
+            background: linear-gradient(90deg, #00d4ff, #7c3aed);
+            color: #fff;
+        }
+        .btn-primary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(0,212,255,0.3);
+        }
+        .btn-secondary {
+            background: transparent;
+            color: #fff;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.1);
+        }
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-top: 60px;
+            flex-wrap: wrap;
+        }
+        .stat {
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 36px;
+            font-weight: bold;
+            color: #00d4ff;
+        }
+        .stat-label {
+            color: #a0aec0;
+            margin-top: 5px;
+        }
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: #718096;
+        }
+        .footer-links a {
+            color: #00d4ff;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="logo">🪞</div>
+        <h1>Open-Reflect</h1>
+        <p class="tagline">"通过反思学习，通过实践进化"</p>
+        
+        <p class="description">
+            先进的自学习反思系统，为 Claude Code 和 OpenCode 打造。
+            具有进化知识追踪功能，让AI能够从经验中学习，持续进化成长。
+        </p>
+        
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon">🧠</div>
+                <h3 class="feature-title">自学习能力</h3>
+                <p class="feature-desc">从每次交互中学习，积累知识，形成个性化的知识库和经验体系。</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📈</div>
+                <h3 class="feature-title">进化追踪</h3>
+                <p class="feature-desc">追踪知识演变，记录学习历程，可视化成长路径和能力提升。</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔄</div>
+                <h3 class="feature-title">双重平台支持</h3>
+                <p class="feature-desc">完美支持 Claude Code 和 OpenCode，无缝集成到你的AI工作流。</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3 class="feature-title">一键安装</h3>
+                <p class="feature-desc">提供自动化安装脚本，几分钟内完成部署，立即开始使用。</p>
+            </div>
+        </div>
+        
+        <div class="buttons">
+            <a href="https://github.com/gyc567/open-reflect" class="btn btn-primary">📦 安装指南</a>
+            <a href="https://github.com/gyc567/open-reflect/blob/master/README.zh.md" class="btn btn-secondary">📖 文档</a>
+            <a href="https://github.com/gyc567/open-reflect/issues" class="btn btn-secondary">💬 反馈</a>
+        </div>
+        
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-number">⭐</div>
+                <div class="stat-label">开源项目</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">🌐</div>
+                <div class="stat-label">多语言支持</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">🔓</div>
+                <div class="stat-label">Apache 2.0</div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <p class="footer-links">
+            <a href="https://github.com/gyc567/open-reflect">GitHub</a>
+            <a href="https://github.com/gyc567/open-reflect/blob/master/README.zh.md">文档</a>
+            <a href="https://github.com/gyc567/open-reflect/issues">Issues</a>
+        </p>
+        <p style="margin-top: 20px;">Open-Reflect © 2024 | Built with ❤️ for AI Evolution</p>
+    </footer>
+</body>
+</html>

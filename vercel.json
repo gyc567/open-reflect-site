@@ -1,6 +1,6 @@
 {
   "name": "open-reflect",
-  "version": 1,
+  "version": 2,
   "buildCommand": null,
   "outputDirectory": ".",
   "framework": null,
